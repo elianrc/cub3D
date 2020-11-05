@@ -6,7 +6,7 @@
 /*   By: erc <erc@student.42.us.org>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 12:59:25 by erc               #+#    #+#             */
-/*   Updated: 2020/11/03 11:35:08 by erc              ###   ########.fr       */
+/*   Updated: 2020/11/04 22:26:47 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@
 # define A      0
 # define S      1
 # define D      2
+# define E      14
+# define R      15
 # define UP     126
 # define DOWN   125
 # define LEFT   123
