@@ -6,7 +6,7 @@
 /*   By: erc <erc@student.42.us.org>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 12:59:25 by erc               #+#    #+#             */
-/*   Updated: 2020/11/04 22:26:47 by erc              ###   ########.fr       */
+/*   Updated: 2020/11/05 13:19:05 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define CUB3D_H
 
 # include "mlx/mlx.h"
-# include "mlx_beta/mlx.h"
 # include <stdio.h>
 # include <stdlib.h>
 # include <math.h>
