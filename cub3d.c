@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   cub3d.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erc <erc@student.42.us.org>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 12:54:40 by erc               #+#    #+#             */
-/*   Updated: 2020/11/11 11:51:12 by erc              ###   ########.fr       */
+/*   Updated: 2020/11/11 13:19:49 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,16 +75,21 @@ void            drawGrid(t_data *img)
     
     i = 0;
     j = 0;    
-    while ( i < mapCols)
+    while ( i < mapRows)
     {
         drawLine(0 , i * tileSize, WINDOW_WIDTH, i * tileSize, img, WHITE);
         i++;
     }
-    while ( j < mapRows)
+    while ( j < mapCols)
     {
         drawLine( j * tileSize, 0,  j * tileSize, WINDOW_HEIGHT, img, WHITE);
         j++;
     }
+}
+
+void            drawMap(t_data *img)
+{
+    //to do
 }
 
 void            drawPlayer(t_data *img, int posX, int posY, int size)
