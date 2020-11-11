@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.c                                            :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erc <erc@student.42.us.org>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 12:54:40 by erc               #+#    #+#             */
-/*   Updated: 2020/11/08 23:04:03 by erc              ###   ########.fr       */
+/*   Updated: 2020/11/11 11:51:12 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@
 # define mapCols 15
 # define WINDOW_WIDTH  mapCols * tileSize
 # define WINDOW_HEIGHT  mapRows * tileSize
-
-// #define screenWidth 640
-// #define screenHeight 480
 
 typedef struct  s_data {
     void        *mlx;
@@ -42,9 +39,52 @@ void            my_mlx_pixel_put(t_data *data, int x, int y, int color)
     *(unsigned int*)dst = color;
 }
 
-void            drawGrid(t_data *data)
+void            drawLine(int x1, int y1, int x2, int y2, t_data *img, int color)
 {
+    int i;
+    int x;
+    int y;
+    int dx;
+    int dy;
+    int step;
+
+    dx = abs(x2 - x1);
+    dy = abs(y2 - y1);
+    if (dx >= dy)
+        step = dx;
+    else
+        step = dy;
+    dx /= step;
+    dy /= step;
+    x = x1;
+    y = y1;
+    i = 1;
+    while (i <= step)
+    {
+        my_mlx_pixel_put(img, x, y, color);
+        x += dx;
+        y += dy;
+        i++;
+    }
+}
+
+void            drawGrid(t_data *img)
+{
+    int i;
+    int j;
     
+    i = 0;
+    j = 0;    
+    while ( i < mapCols)
+    {
+        drawLine(0 , i * tileSize, WINDOW_WIDTH, i * tileSize, img, WHITE);
+        i++;
+    }
+    while ( j < mapRows)
+    {
+        drawLine( j * tileSize, 0,  j * tileSize, WINDOW_HEIGHT, img, WHITE);
+        j++;
+    }
 }
 
 void            drawPlayer(t_data *img, int posX, int posY, int size)
@@ -127,10 +167,9 @@ int         renderer(t_data *img)
     img->img = mlx_new_image(img->mlx, WINDOW_WIDTH, WINDOW_HEIGHT);
 
     // Draw Process
-    
-    // drawGrid()
+    drawGrid(img);
     // drawMap()
-    drawPlayer(img, img->posX, img->posY, 20);
+    drawPlayer(img, img->posX, img->posY, 16);
 
     mlx_put_image_to_window(img->mlx, img->window, img->img, 0, 0);
     return (0);
@@ -139,10 +178,10 @@ int         renderer(t_data *img)
 int main(void)
 {
     t_data  img;
-    img.posX = 320;
-    img.posY = 320;
+    img.posX = 300;
+    img.posY = 300;
 
-    int map[mapCols][mapRows] = 
+    int map[mapRows][mapCols] = 
     {
             {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
             {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1},
