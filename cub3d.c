@@ -6,7 +6,7 @@
 /*   By: erc <erc@student.42.us.org>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 12:54:40 by erc               #+#    #+#             */
-/*   Updated: 2020/11/12 08:48:03 by erc              ###   ########.fr       */
+/*   Updated: 2020/11/12 12:41:22 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ typedef struct  s_data {
     int         bits_per_pixel;
     int         line_length;
     int         endian;
-    int         posX;
-    int         posY;
-    int         radius;
+    int			posX;
+    int			posY;
+	int			map[mapRows][mapCols];
 }               t_data;
 
 void            my_mlx_pixel_put(t_data *data, int x, int y, int color)
@@ -73,7 +73,6 @@ void            drawSquare(t_data *img, int x, int y, int size, int color)
     int i;
     int j;
     int originalPos;
-    int originalSize;
 
     i = 0;
     j = 0;
@@ -127,6 +126,8 @@ void            drawMap(t_data *img, int color)
         {
             tileX = j * tileSize;
             tileY = i * tileSize;
+			// if [i][j] == 1 - draw black
+			// else draw white
             drawSquare(img, tileX, tileY, tileSize, color);
             j++;
         }
@@ -139,7 +140,6 @@ void            drawPlayer(t_data *img, int posX, int posY, int size, int color)
     int i;
     int j;
     int originalPos;
-    int originalSize;
 
     i = 0;
     j = 0;
@@ -186,16 +186,6 @@ int             move(int keycode, t_data *img)
         printf("D\n");
         img->posX += 10;
     }
-    else if (keycode == E)
-    {
-        printf("E\n");
-        img->radius -= 10;
-    }
-    else if (keycode == R)
-    {
-        printf("R\n");
-        img->radius += 10;
-    }
     else
         printf("%d\n", keycode);
     return (0);
@@ -215,7 +205,7 @@ int         renderer(t_data *img)
 
     // Draw Process
     drawMap(img, WHITE);
-    drawGrid(img, BLACK);
+    drawGrid(img, BLACK);		
     drawPlayer(img, img->posX, img->posY, tileSize / 2, RED);
 
     mlx_put_image_to_window(img->mlx, img->window, img->img, 0, 0);
@@ -242,6 +232,7 @@ int main(void)
             {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
             {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
     };
+	ft_putstr("Testing libft\n");
 
     // Creating Window and Canvas
     img.mlx = mlx_init();

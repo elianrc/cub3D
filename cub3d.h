@@ -6,7 +6,7 @@
 /*   By: erc <erc@student.42.us.org>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 12:59:25 by erc               #+#    #+#             */
-/*   Updated: 2020/11/11 16:33:14 by erc              ###   ########.fr       */
+/*   Updated: 2020/11/12 11:33:50 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CUB3D_H
 
 # include "mlx/mlx.h"
+# include "tools/libft/libft.h"
 # include <stdio.h>
 # include <stdlib.h>
 # include <math.h>

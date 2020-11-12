@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: erc <marvin@42.fr>                         +#+  +:+       +#+         #
+#    By: erc <erc@student.42.us.org>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/17 02:15:22 by erc               #+#    #+#              #
-#    Updated: 2020/04/17 02:15:39 by erc              ###   ########.fr        #
+#    Updated: 2020/11/12 12:41:04 by erc              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SOURCES	= ft_atoi_base.c ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c\
           ft_strdup.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c\
           ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnew.c\
           ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c\
-          ft_tolower.c ft_toupper.c ft_wordcounter.c
+          ft_tolower.c ft_toupper.c ft_wordcounter.c ft_putstr.c
 
 SOURCES_B =  ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstadd_back.c\
 	     ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c\
