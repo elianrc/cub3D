@@ -6,7 +6,7 @@
 /*   By: erc <erc@student.42.us.org>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 12:54:40 by erc               #+#    #+#             */
-/*   Updated: 2020/11/12 00:43:27 by erc              ###   ########.fr       */
+/*   Updated: 2020/11/12 08:48:03 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ void            drawSquare(t_data *img, int x, int y, int size, int color)
     }
 }
 
-void            drawGrid(t_data *img)
+void            drawGrid(t_data *img, int color)
 {
     int i;
     int j;
@@ -102,17 +102,17 @@ void            drawGrid(t_data *img)
     j = 0;    
     while ( i < mapRows)
     {
-        drawLine(0 , i * tileSize, WINDOW_WIDTH, i * tileSize, img, YELLOW);
+        drawLine(0 , i * tileSize, WINDOW_WIDTH, i * tileSize, img, color);
         i++;
     }
     while ( j < mapCols)
     {
-        drawLine( j * tileSize, 0,  j * tileSize, WINDOW_HEIGHT, img, YELLOW);
+        drawLine( j * tileSize, 0,  j * tileSize, WINDOW_HEIGHT, img, color);
         j++;
     }
 }
 
-void            drawMap(t_data *img)
+void            drawMap(t_data *img, int color)
 {
     int i;
     int tileX;
@@ -127,14 +127,14 @@ void            drawMap(t_data *img)
         {
             tileX = j * tileSize;
             tileY = i * tileSize;
-            drawSquare(img, tileX, tileY, tileSize, WHITE);
+            drawSquare(img, tileX, tileY, tileSize, color);
             j++;
         }
         i++;
     }
 }
 
-void            drawPlayer(t_data *img, int posX, int posY, int size)
+void            drawPlayer(t_data *img, int posX, int posY, int size, int color)
 {
     int i;
     int j;
@@ -148,7 +148,7 @@ void            drawPlayer(t_data *img, int posX, int posY, int size)
     {
         while (j < size)
         {
-            my_mlx_pixel_put(img, posX, posY, RED);
+            my_mlx_pixel_put(img, posX, posY, color);
             posX++;
             j++;
         }
@@ -214,9 +214,9 @@ int         renderer(t_data *img)
     img->img = mlx_new_image(img->mlx, WINDOW_WIDTH, WINDOW_HEIGHT);
 
     // Draw Process
-    drawGrid(img);
-    drawMap(img);
-    drawPlayer(img, img->posX, img->posY, tileSize / 2);
+    drawMap(img, WHITE);
+    drawGrid(img, BLACK);
+    drawPlayer(img, img->posX, img->posY, tileSize / 2, RED);
 
     mlx_put_image_to_window(img->mlx, img->window, img->img, 0, 0);
     return (0);
@@ -225,8 +225,8 @@ int         renderer(t_data *img)
 int main(void)
 {
     t_data  img;
-    img.posX = 300;
-    img.posY = 300;
+    img.posX = WINDOW_WIDTH / 2;
+    img.posY = WINDOW_HEIGHT / 2;
 
     int map[mapRows][mapCols] = 
     {
