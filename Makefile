@@ -5,17 +5,17 @@
 #                                                     +:+ +:+         +:+      #
 #    By: erc <erc@student.42.us.org>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/11/05 11:47:59 by erc               #+#    #+#              #
-#    Updated: 2020/11/12 12:08:51 by erc              ###   ########.fr        #
+#    Created: 2020/11/12 22:34:48 by erc               #+#    #+#              #
+#    Updated: 2020/11/14 15:43:39 by erc              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC=cub3d.c
+SRC=cub3d.c c3_init.c c3_draw.c c3_render.c
 
-# FLAGS= -Wall -Wextra -Werror
+FLAGS= -Wall -Wextra -Werror
 
 all:
-	gcc $(SRC) tools/libft/libft.a mlx/libmlx.a  -framework OpenGL -framework AppKit
+	gcc $(SRC) $(FLAGS) tools/libft/libft.a mlx/libmlx.a  -framework OpenGL -framework AppKit c3_hooks.c
 
 clean:
 	rm a.out
