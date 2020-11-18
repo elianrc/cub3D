@@ -5,24 +5,28 @@
 #                                                     +:+ +:+         +:+      #
 #    By: erc <erc@student.42.us.org>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/08/03 08:29:24 by erc               #+#    #+#              #
-#    Updated: 2020/11/05 11:44:59 by erc              ###   ########.fr        #
+#    Created: 2020/11/18 11:28:11 by erc               #+#    #+#              #
+#    Updated: 2020/11/18 11:45:56 by erc              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=libftprintf.a
+NAME=megalibft.a
 
-SRCS=  pf*.c ft*.c
+SRCS=	libft/ft*.c \
+		ft_printf/ft_printf.c ft_printf/pf*.c \
+		gnl/get_next_line.c
 
-OBJS=ft*.o pf*.o
+OBJS= 	ft*.o \
+		ft_printf.o pf*.o \
+		get_next_line.o
 
-INCLUDES= ../libft/libft.a
+# INCLUDES= ../libft/libft.a
 
 all:$(NAME)
 	@echo Compiling $(NAME)...
 
 $(NAME):
-	@gcc -g3 -Wall -Wextra -Werror -I$(INCLUDES) -c $(SRCS)
+	@gcc -Wall -Wextra -Werror -c $(SRCS)
 	@ar rc $(NAME) $(OBJS)
 	@ranlib $(NAME)
 
@@ -34,6 +38,6 @@ clean:
 
 fclean: clean
 	@echo Deleting $(NAME)...
-	@/bin/rm -f $(NAME) ft_printf.h.gch
+	@/bin/rm -f $(NAME)
 
 re: fclean all

@@ -6,16 +6,29 @@
 /*   By: erc <erc@student.42.us.org>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 21:22:29 by erc               #+#    #+#             */
-/*   Updated: 2020/11/14 15:35:36 by erc              ###   ########.fr       */
+/*   Updated: 2020/11/18 10:12:26 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 	t_all		all;
+	int			fd;
+	int			return_val;
+	char		*line;
+	int			line_count;
 
+	line_count = argc;
+	fd = open(argv[1], O_RDONLY);
+	while ((return_val = get_next_line(fd, &line)) > 0)
+	{
+		ft_printf("GNL: %s [%d] [%d]\n",  line, return_val, line_count);
+		line_count++;
+		free(line);
+    }
+	ft_printf("\n\n_____ STARTING CUB3D ______\n\n");
 	ft_init(&all);
 	ft_map(&all);
 	all.mlx.mlx = mlx_init();

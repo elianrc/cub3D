@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erc <marvin@42.fr>                         +#+  +:+       +#+        */
+/*   By: erc <erc@student.42.us.org>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/15 23:36:18 by erc               #+#    #+#             */
-/*   Updated: 2020/08/25 15:33:31 by erc              ###   ########.fr       */
+/*   Updated: 2020/11/18 11:26:00 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
+
 
 /*
 **--------------- PART 1 - LIBC FUNCTIONS ---------------
@@ -31,6 +32,7 @@ void				*ft_calloc(size_t nmemb, size_t size);
 void				*ft_memchr(const void *s, int c, size_t n);
 void				*ft_memalloc(size_t size);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
+int					ft_memdel(void **ptr);
 /*
 **--- String Manipulation && Examination Functions ---
 */

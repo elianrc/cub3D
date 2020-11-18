@@ -6,7 +6,7 @@
 /*   By: erc <erc@student.42.us.org>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 11:52:34 by erc               #+#    #+#             */
-/*   Updated: 2020/11/14 15:55:39 by erc              ###   ########.fr       */
+/*   Updated: 2020/11/18 09:42:35 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void		my_mlx_pixel_put(t_all *all, int x, int y, int color)
 	*(unsigned int*)dst = color;
 }
 
-int	ft_render(t_all *all)
+int			ft_render(t_all *all)
 {
 	mlx_destroy_image(all->mlx.mlx, all->mlx.img);
 	all->mlx.img = mlx_new_image(all->mlx.mlx, all->map.window_width,

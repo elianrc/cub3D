@@ -6,7 +6,7 @@
 /*   By: erc <erc@student.42.us.org>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 21:24:26 by erc               #+#    #+#             */
-/*   Updated: 2020/11/14 15:51:31 by erc              ###   ########.fr       */
+/*   Updated: 2020/11/18 11:43:27 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,11 @@
 */
 
 # include "mlx/mlx.h"
-# include "tools/libft/libft.h"
+# include "megalibft/libft/libft.h"
+# include "megalibft/gnl/get_next_line.h"
+# include "megalibft/ft_printf/ft_printf.h"
 # include <stdio.h>
+# include <fcntl.h>
 # include <stdlib.h>
 # include <math.h>
 
