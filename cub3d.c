@@ -6,7 +6,7 @@
 /*   By: erc <erc@student.42.us.org>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 21:22:29 by erc               #+#    #+#             */
-/*   Updated: 2020/11/19 20:26:40 by erc              ###   ########.fr       */
+/*   Updated: 2020/11/19 20:33:41 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ int	main(int argc, char **argv)
 	t_all		all;
 
 	if (argc == 3 && (ft_strncmprev(argv[1], ".cub", 4)) == 0 && (ft_strcmp(argv[2], "--save")) == 0)
-			ft_printf("cub3D");
+		ft_printf("cub3D & screenshot\n");
+	else if (argc == 2 && (ft_strncmprev(argv[1], ".cub", 4)) == 0)
+		ft_printf("cub3D\n");
 	else
 		ft_printf("Usage: [executable] [option]\n");
 	ft_init_values(&all);
