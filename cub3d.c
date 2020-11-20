@@ -6,7 +6,7 @@
 /*   By: erc <erc@student.42.us.org>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 21:22:29 by erc               #+#    #+#             */
-/*   Updated: 2020/11/18 10:12:26 by erc              ###   ########.fr       */
+/*   Updated: 2020/11/19 20:26:40 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,15 @@
 int	main(int argc, char **argv)
 {
 	t_all		all;
-	int			fd;
-	int			return_val;
-	char		*line;
-	int			line_count;
 
-	line_count = argc;
-	fd = open(argv[1], O_RDONLY);
-	while ((return_val = get_next_line(fd, &line)) > 0)
-	{
-		ft_printf("GNL: %s [%d] [%d]\n",  line, return_val, line_count);
-		line_count++;
-		free(line);
-    }
-	ft_printf("\n\n_____ STARTING CUB3D ______\n\n");
-	ft_init(&all);
+	if (argc == 3 && (ft_strncmprev(argv[1], ".cub", 4)) == 0 && (ft_strcmp(argv[2], "--save")) == 0)
+			ft_printf("cub3D");
+	else
+		ft_printf("Usage: [executable] [option]\n");
+	ft_init_values(&all);
+	if ((ft_init_mlx(&all)) == 1)
+		return(1);
 	ft_map(&all);
-	all.mlx.mlx = mlx_init();
-	all.mlx.window = mlx_new_window(all.mlx.mlx, all.map.window_width,
-									all.map.window_height,
-									"Soli Deo Gloria!");
-	all.mlx.img = mlx_new_image(all.mlx.mlx, all.map.window_width,
-									all.map.window_height);
-	all.data.addr = mlx_get_data_addr(all.mlx.img, &all.data.bits_per_pixel,
-									&all.data.line_length, &all.data.endian);
 	mlx_hook(all.mlx.window, 17, 1L << 2, ft_close, &all);
 	mlx_hook(all.mlx.window, 2, 0, ft_move, &all);
 	mlx_loop_hook(all.mlx.mlx, ft_render, &all);

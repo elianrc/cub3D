@@ -6,7 +6,7 @@
 #    By: erc <erc@student.42.us.org>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 11:28:11 by erc               #+#    #+#              #
-#    Updated: 2020/11/18 11:45:56 by erc              ###   ########.fr        #
+#    Updated: 2020/11/18 11:51:52 by erc              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,6 @@ SRCS=	libft/ft*.c \
 OBJS= 	ft*.o \
 		ft_printf.o pf*.o \
 		get_next_line.o
-
-# INCLUDES= ../libft/libft.a
 
 all:$(NAME)
 	@echo Compiling $(NAME)...

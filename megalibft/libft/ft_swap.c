@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erc <erc@student.42.us.org>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/25 15:30:32 by erc               #+#    #+#             */
-/*   Updated: 2020/11/18 16:35:23 by erc              ###   ########.fr       */
+/*   Created: 2020/11/19 19:37:22 by erc               #+#    #+#             */
+/*   Updated: 2020/11/19 19:38:20 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_putstr(char *str)
+void	ft_swap(int *a, int *b)
 {
-    int total_written;
+		int tmp;
 
-    total_written = 0;
-    if (!str)
-        return (0);
-    while (*str)
-    {
-        ft_putchar_fd(*str, 1);
-        str++;
-        total_written++;
-    }
-    return (total_written);
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }

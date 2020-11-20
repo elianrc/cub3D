@@ -6,7 +6,7 @@
 /*   By: erc <erc@student.42.us.org>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/15 23:36:18 by erc               #+#    #+#             */
-/*   Updated: 2020/11/18 11:26:00 by erc              ###   ########.fr       */
+/*   Updated: 2020/11/19 20:25:09 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-
 /*
 **--------------- PART 1 - LIBC FUNCTIONS ---------------
 **
@@ -25,6 +24,7 @@
 */
 void				*ft_memset(void *s, int c, size_t n);
 void				ft_bzero(void *s, size_t n);
+void				ft_swap(int *a, int *b);
 void				*ft_memmove(void *dest, const void *src, size_t n);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
 void				*ft_memccpy(void *dest, const void *src, int c, size_t n);
@@ -40,7 +40,9 @@ size_t				ft_strlen(const char *s);
 size_t				ft_strlcpy(char *dst, const char *src, size_t size);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 char				*ft_strchr(const char *s, int c);
+int					ft_strcmp(char *s1, char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
+int					ft_strncmprev(const char *s1, const char *s2, size_t n);
 char				*ft_strnstr(const char *big, const char *little,
 		size_t len);
 char				*ft_strrchr(const char *s, int c);

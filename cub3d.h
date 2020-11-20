@@ -6,7 +6,7 @@
 /*   By: erc <erc@student.42.us.org>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 21:24:26 by erc               #+#    #+#             */
-/*   Updated: 2020/11/18 11:43:27 by erc              ###   ########.fr       */
+/*   Updated: 2020/11/19 12:07:26 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 # include "megalibft/libft/libft.h"
 # include "megalibft/gnl/get_next_line.h"
 # include "megalibft/ft_printf/ft_printf.h"
-# include <stdio.h>
 # include <fcntl.h>
 # include <stdlib.h>
 # include <math.h>
@@ -100,7 +99,8 @@ typedef struct		s_all
 **___  FUNCTIONS  _____
 */
 
-int					ft_init(t_all *all);
+int					ft_init_values(t_all *all);
+int					ft_init_mlx(t_all *all);
 int					ft_close(void);
 int					ft_move(int keycode, t_all *all);
 int					ft_render(t_all *all);

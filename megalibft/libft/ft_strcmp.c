@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erc <erc@student.42.us.org>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/25 15:30:32 by erc               #+#    #+#             */
-/*   Updated: 2020/11/18 16:35:23 by erc              ###   ########.fr       */
+/*   Created: 2020/11/19 20:23:47 by erc               #+#    #+#             */
+/*   Updated: 2020/11/19 20:24:20 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_putstr(char *str)
+int	ft_strcmp(char *s1, char *s2)
 {
-    int total_written;
+	int i;
 
-    total_written = 0;
-    if (!str)
-        return (0);
-    while (*str)
-    {
-        ft_putchar_fd(*str, 1);
-        str++;
-        total_written++;
-    }
-    return (total_written);
+	i = 0;
+	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
+		i++;
+	return (s1[i] - s2[i]);
 }
