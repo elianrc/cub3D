@@ -6,7 +6,7 @@
 /*   By: erc <erc@student.42.us.org>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 21:24:26 by erc               #+#    #+#             */
-/*   Updated: 2020/11/19 12:07:26 by erc              ###   ########.fr       */
+/*   Updated: 2020/11/21 16:18:23 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,9 @@
 # define LEFT	123
 # define RIGHT	124
 
+# define MOVE_SPEED 1
+# define ROTA_SPEED	5
+
 /*
 **____  STRUCTS  ______
 */
@@ -72,6 +75,13 @@ typedef	struct		s_player
 {
 	int				pos_x;
 	int				pos_y;
+	int				move[6];
+	int				move_x;
+	int				move_y;
+	int				slide_right;
+	int				slide_left;
+	int				rotate_right;
+	int				rotate_left;
 	int				color;
 }					t_player;
 
@@ -101,8 +111,14 @@ typedef struct		s_all
 
 int					ft_init_values(t_all *all);
 int					ft_init_mlx(t_all *all);
+
 int					ft_close(void);
-int					ft_move(int keycode, t_all *all);
+int					ft_update(t_all *all);
+int					ft_key_pressed(int keycode, t_all *all);
+int					ft_key_released(int keycode, t_all *all);
+int					ft_move_up_down(t_all *all, int speed);
+int					ft_slide_left_right(t_all *all, int speed);
+
 int					ft_render(t_all *all);
 void				my_mlx_pixel_put(t_all *all, int x, int y, int color);
 void				draw_line(t_all *all, int x1, int y1,

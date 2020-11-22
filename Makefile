@@ -6,11 +6,11 @@
 #    By: erc <erc@student.42.us.org>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/12 22:34:48 by erc               #+#    #+#              #
-#    Updated: 2020/11/18 13:13:59 by erc              ###   ########.fr        #
+#    Updated: 2020/11/21 16:16:36 by erc              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC=cub3d.c c3_init.c c3_draw.c c3_render.c c3_hooks.c
+SRC=cub3d.c c3_init.c c3_draw.c c3_render.c c3_hooks.c c3_move.c
 
 FLAGS= -Wall -Wextra -Werror
 
