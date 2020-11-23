@@ -6,7 +6,7 @@
 #    By: erc <erc@student.42.us.org>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/12 22:34:48 by erc               #+#    #+#              #
-#    Updated: 2020/11/21 16:16:36 by erc              ###   ########.fr        #
+#    Updated: 2020/11/22 12:42:02 by erc              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,9 @@ LIBS= megalibft/megalibft.a mlx/libmlx.a
 
 all:
 	@echo __ CREATING CUB3D EXECUTABLE __
-	gcc $(SRC) $(FLAGS) -fsanitize=address $(LIBS) -framework OpenGL -framework AppKit
+	@$(MAKE) -C megalibft re
+	@$(MAKE) -C megalibft clean
+	gcc $(SRC) $(FLAGS) -fsanitize=address $(LIBS) -framework OpenGL -framework AppKit -o cub3D
 
 clean:
-	rm a.out
+	rm cub3D
