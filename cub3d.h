@@ -6,7 +6,7 @@
 /*   By: erc <erc@student.42.us.org>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 21:24:26 by erc               #+#    #+#             */
-/*   Updated: 2020/11/21 16:18:23 by erc              ###   ########.fr       */
+/*   Updated: 2020/11/23 11:50:21 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,8 @@ typedef	struct		s_map
 	int				floor_color;
 	int				wall_color;
 	int				map[11][15];
+	int				res_x;
+	int				res_y;
 }					t_map;
 
 typedef struct		s_all
@@ -129,5 +131,6 @@ void				draw_map(t_all *all, int wallcol, int floorcol);
 void				draw_player(t_all *all, int pos_x,
 								int pos_y, int size, int color);
 int					ft_map(t_all *all);
+int					ft_analyze_map(t_all *all, char **argv);
 
 #endif

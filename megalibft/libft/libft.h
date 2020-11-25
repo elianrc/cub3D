@@ -6,7 +6,7 @@
 /*   By: erc <erc@student.42.us.org>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/15 23:36:18 by erc               #+#    #+#             */
-/*   Updated: 2020/11/22 12:33:02 by erc              ###   ########.fr       */
+/*   Updated: 2020/11/23 19:04:41 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int					ft_toupper(int c);
 int					ft_tolower(int c);
 int					ft_isascii(int c);
 int					ft_numdig(int n, int base);
-int					ft_spaceskip(char *line, int *i);
+int					ft_spaceskip(char *line);
 /*
 **--------------- PART 2 - ADDITIONAL FUNCTIONS ---------------
 **

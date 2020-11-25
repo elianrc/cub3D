@@ -6,7 +6,7 @@
 /*   By: erc <erc@student.42.us.org>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 11:51:25 by erc               #+#    #+#             */
-/*   Updated: 2020/11/21 14:37:03 by erc              ###   ########.fr       */
+/*   Updated: 2020/11/23 23:00:50 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,8 @@
 int	ft_init_values(t_all *all)
 {
 	all->map.tilesize = 32;
-	all->map.map_rows = 11;
-	all->map.map_cols = 15;
-	all->map.window_width = all->map.map_cols * all->map.tilesize;
-	all->map.window_height = all->map.map_rows * all->map.tilesize;
+	all->map.map_rows = all->map.window_height / all->map.tilesize;
+	all->map.map_cols = all->map.window_width / all->map.tilesize;
 	all->map.wall_color = BLACK;
 	all->map.floor_color = WHITE;
 	all->player.color = RED;

@@ -6,7 +6,7 @@
 /*   By: erc <erc@student.42.us.org>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 21:22:29 by erc               #+#    #+#             */
-/*   Updated: 2020/11/21 16:15:00 by erc              ###   ########.fr       */
+/*   Updated: 2020/11/23 11:53:34 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	main(int argc, char **argv)
 	else
 		ft_printf("Usage: [executable] [map path] [option]\n");
 
+	ft_analyze_map(&all, &argv[1]);
 	ft_init_values(&all);
 	ft_init_mlx(&all);
 	ft_map(&all);
