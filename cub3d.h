@@ -6,7 +6,7 @@
 /*   By: erc <erc@student.42.us.org>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 21:24:26 by erc               #+#    #+#             */
-/*   Updated: 2020/11/23 11:50:21 by erc              ###   ########.fr       */
+/*   Updated: 2020/11/25 10:00:21 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,12 +76,6 @@ typedef	struct		s_player
 	int				pos_x;
 	int				pos_y;
 	int				move[6];
-	int				move_x;
-	int				move_y;
-	int				slide_right;
-	int				slide_left;
-	int				rotate_right;
-	int				rotate_left;
 	int				color;
 }					t_player;
 
@@ -94,9 +88,7 @@ typedef	struct		s_map
 	int				window_height;
 	int				floor_color;
 	int				wall_color;
-	int				map[11][15];
-	int				res_x;
-	int				res_y;
+	int				map[11][15]; // part of testing
 }					t_map;
 
 typedef struct		s_all
