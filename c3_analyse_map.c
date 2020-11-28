@@ -6,7 +6,7 @@
 /*   By: erc <erc@student.42.us.org>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:34:56 by erc               #+#    #+#             */
-/*   Updated: 2020/11/25 09:59:37 by erc              ###   ########.fr       */
+/*   Updated: 2020/11/28 15:19:53 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,12 @@
 //TODO
 // c3_analyze_texture();
 
-// static int	c3_analyze_map(t_all *all, char *line)
-// {
-		
-// }
+static int	c3_analyze_map(t_all *all, char *line)
+{
+	all->map.size_x = ft_strlen(line);
+	all->map.size_y++;
+	return (0);
+}
 
 static int	c3_analyze_resolution(t_all *all, char *line)
 {
@@ -36,6 +38,7 @@ static int	c3_analyze_line(t_all *all, char *line)
 	line += ft_spaceskip(line);
 	if (*line == 'R')
 		c3_analyze_resolution(all, ++line);
+	c3_analyze_map(all, line);
 	return (0);
 }
 
@@ -55,6 +58,9 @@ int	ft_analyze_map(t_all *all, char **argv)
 	c3_analyze_line(all, line);
 	ft_printf("Resolution X: %d\n", all->map.window_height);
 	ft_printf("Resolution Y: %d\n", all->map.window_width);
+	ft_printf("Map X Size is: %d\n", all->map.size_x);
+	ft_printf("Map Y Size is: %d\n", all->map.size_y);
+
 	close(fd);
 	return (0);
 }
