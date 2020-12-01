@@ -6,7 +6,7 @@
 /*   By: erc <erc@student.42.us.org>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:34:56 by erc               #+#    #+#             */
-/*   Updated: 2020/11/28 15:19:53 by erc              ###   ########.fr       */
+/*   Updated: 2020/11/30 20:55:17 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ static int	c3_analyze_map(t_all *all, char *line)
 {
 	all->map.size_x = ft_strlen(line);
 	all->map.size_y++;
+	
 	return (0);
 }
 
@@ -36,10 +37,12 @@ static int	c3_analyze_resolution(t_all *all, char *line)
 static int	c3_analyze_line(t_all *all, char *line)
 {
 	line += ft_spaceskip(line);
+	if (*line == '\0')
+		return(0);
 	if (*line == 'R')
-		c3_analyze_resolution(all, ++line);
-	c3_analyze_map(all, line);
-	return (0);
+		return (c3_analyze_resolution(all, ++line));
+	else
+		return (c3_analyze_map(all, line));
 }
 
 int	ft_analyze_map(t_all *all, char **argv)

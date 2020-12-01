@@ -6,7 +6,7 @@
 /*   By: erc <erc@student.42.us.org>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 21:24:26 by erc               #+#    #+#             */
-/*   Updated: 2020/11/28 15:07:23 by erc              ###   ########.fr       */
+/*   Updated: 2020/11/28 20:54:49 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ typedef	struct		s_map
 
 	int				size_x;	// the same as window width
 	int				size_y; // the same as window height
-	
+	int				map2;
 
 	int				map[11][15]; // part of testing
 }					t_map;
