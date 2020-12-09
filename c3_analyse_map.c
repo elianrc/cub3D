@@ -6,7 +6,7 @@
 /*   By: erc <erc@student.42.us.org>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:34:56 by erc               #+#    #+#             */
-/*   Updated: 2020/11/30 20:55:17 by erc              ###   ########.fr       */
+/*   Updated: 2020/11/30 20:59:20 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ static int	c3_analyze_resolution(t_all *all, char *line)
 		line++;
 	line += ft_spaceskip(line);
 	all->map.window_width = ft_atoi(line);
+	// check for valid resolutions
 	return (0);
 }
 
