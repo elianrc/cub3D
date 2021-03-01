@@ -6,7 +6,7 @@
 /*   By: erc <erc@student.42.us.org>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:34:56 by erc               #+#    #+#             */
-/*   Updated: 2020/11/30 20:59:20 by erc              ###   ########.fr       */
+/*   Updated: 2020/12/11 10:39:27 by erc              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,17 @@
 
 static int	c3_analyze_map(t_all *all, char *line)
 {
+	int i;
+
+	i = 0;
 	all->map.size_x = ft_strlen(line);
+	while (line[i] != '\0')
+	{
+		if (line[i] == '0' || line[i] == '1' ||  line[i] == 32)
+			ft_printf("%c", line[i]);
+		i++;
+	}
+	ft_printf("\n");
 	all->map.size_y++;
 	
 	return (0);
@@ -31,7 +41,6 @@ static int	c3_analyze_resolution(t_all *all, char *line)
 		line++;
 	line += ft_spaceskip(line);
 	all->map.window_width = ft_atoi(line);
-	// check for valid resolutions
 	return (0);
 }
 
@@ -60,6 +69,7 @@ int	ft_analyze_map(t_all *all, char **argv)
 		free(line);
 	}
 	c3_analyze_line(all, line);
+	
 	ft_printf("Resolution X: %d\n", all->map.window_height);
 	ft_printf("Resolution Y: %d\n", all->map.window_width);
 	ft_printf("Map X Size is: %d\n", all->map.size_x);
